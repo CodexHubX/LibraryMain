@@ -41,6 +41,7 @@ local Library = {
 	},
 	Theme = {},
 	DropdownSizes = {}, -- to store previous opened dropdown size to resize scrollingFrame canvassize
+    MainScreenGui = ScreenGui,
 }
 Library.__index = Library
 
@@ -1661,7 +1662,7 @@ function Library:createManager(options: table)
 	
 	UI:createKeybind({
 		text = "Hide UI", 
-		default = "Insert",
+		default = "LeftControl",
 		callback = function()
 			ScreenGui.Enabled = not ScreenGui.Enabled
 		end,
