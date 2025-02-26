@@ -53,7 +53,7 @@ function HookingService:ProtectGui(Object)
 
     local index
     index = hookmetamethod(game, "__index", function(self, key, ...)
-        if  self:IsA('CoreGui') and key == Object.Name then
+        if not checkcaller() and self:IsA('CoreGui') and key == Object.Name then
             return
         end
 
